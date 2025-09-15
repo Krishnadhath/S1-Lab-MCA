@@ -1,37 +1,58 @@
-body{
-    background-color :black
+/* === GENERAL STYLES === */
+body {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+    font-family: 'Orbitron', sans-serif;
+    color: aliceblue;
+    margin: 0;
+    padding: 20px;
 }
 
-#mainHeading{
-
-   text-align :center;
+/* === TYPOGRAPHY === */
+#mainHeading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
 }
 
-.menu {
-    background-color: white;
-    padding: 10px 0;
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 40px;
 }
-p{
-    color :aliceblue;
-    font-size  :larger;
-}
-   
 
-.css-property-box {
-    border: 2px solid #0ff; /* Neon cyan border */
+.intro-text {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* === NEON TEXT EFFECT === */
+.neon-text {
     color: #0ff;
-    background-color: rgba(0, 255, 255, 0.1); /* Neon glow effect */
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* === CSS PROPERTY BOXES === */
+.css-property-box {
+    border: 2px solid #0ff;
+    color: #0ff;
+    background-color: rgba(0, 255, 255, 0.05);
     padding: 20px;
     margin: 20px auto;
     width: 80%;
     border-radius: 10px;
     box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-    font-family: Arial, sans-serif;
     text-align: center;
-    transition: transform 0.2s;
-}
+    transition: transform 0.2s, box-shadow 0.2s;*
+} 
 
-/* Shake animation */
+  .css-property-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff; 
+}  
+
+/* === ANIMATIONS === */
 /* @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -49,3 +70,35 @@ p{
 .shake {
     animation: shake 1.5s infinite;
 }
+
+/* === NEON BUTTON === */
+.neon-button {
+    background: black;
+    color: #0ff;
+    border: 2px solid #0ff;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #0ff;
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    transition: 0.3s;
+}
+
+.neon-button:hover {
+    background-color: #0ff;
+    color: black;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+    cursor: pointer;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+@media (max-width: 768px) {
+    #mainHeading,
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .intro-text {
+        font-size: 1.2rem;
+    }
