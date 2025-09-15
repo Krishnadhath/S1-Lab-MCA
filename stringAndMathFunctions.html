@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript String Functions</title>
+</head>
+<body>
+
+  <h1 style="text-align: center; color: red;">JAVASCRIPT STRING FUNCTIONS</h1>
+
+  <h3>Find the length of the string</h3>
+  <input type="text" id="stringLength" >
+  <button onclick="getLength()">Submit</button><br>
+  <h3 id="ansLength"></h3>
+
+  <h3>Convert string into Uppercase</h3>
+  <input type="text" id="stringUpper" >
+  <button onclick="toUpperCase()">Submit</button><br>
+  <h3 id="ansUpper"></h3>
+
+  <h3>Convert string into Lowercase</h3>
+  <input type="text" id="stringLower" >
+  <button onclick="toLowerCase()">Submit</button><br>
+  <h3 id="ansLower"></h3>
+
+  <script>
+    function getLength() {
+      let y = document.getElementById("stringLength").value;
+      document.getElementById("ansLength").innerHTML = "String length = " + y.length;
+    }
+
+    function toUpperCase() {
+      let y = document.getElementById("stringUpper").value;
+      document.getElementById("ansUpper").innerHTML = y.toUpperCase();
+    }
+
+    function toLowerCase() {
+      let y = document.getElementById("stringLower").value;
+      document.getElementById("ansLower").innerHTML = y.toLowerCase();
+    }
+  </script>
+
+</body>
+</html>
