@@ -39,9 +39,14 @@
     <label>Enter a word:</label><br>
     <input type="text" id="stringInput"><br>
 
-    <button onclick="getLength()">Get Length</button>
+  <button onclick="getLength()">Get Length</button>
     <button onclick="toUpperCase()">To Uppercase</button>
     <button onclick="toLowerCase()">To Lowercase</button>
+    <button onclick="reverseString()">Reverse</button>
+    <button onclick="sliceString()">Slice (0-3)</button>
+    <button onclick="charAtPosition()">Char At (index 2)</button>
+    <!-- <button onclick="replaceText()">Replace 'a' with '@'</button>
+    <button onclick="replaceAllText()">Replace All 'a' with '@'</button> -->
 
     <div class="result" id="stringResult"></div>
   </section>
@@ -65,9 +70,9 @@
 
   <script>
     // STRING FUNCTIONS
-    function getLength() {
+   function getLength() {
       const str = document.getElementById("stringInput").value;
-      document.getElementById("stringResult").innerHTML = "Length: " + str.length;
+      document.getElementById("stringResult").innerText = "Length: " + str.length;
     }
 
     function toUpperCase() {
@@ -79,6 +84,36 @@
       const str = document.getElementById("stringInput").value;
       document.getElementById("stringResult").innerText = "Lowercase: " + str.toLowerCase();
     }
+
+    function reverseString() {
+      const str = document.getElementById("stringInput").value;
+      const reversed = [...str].reverse().join('');
+      document.getElementById("stringResult").innerText = "Reversed: " + reversed;
+    }
+
+    function sliceString() {
+      const str = document.getElementById("stringInput").value;
+      const sliced = str.slice(0, 3);
+      document.getElementById("stringResult").innerText = "Slice (0-3): " + sliced;
+    }
+
+    function charAtPosition() {
+      const str = document.getElementById("stringInput").value;
+      const char = str.charAt(2);
+      document.getElementById("stringResult").innerText = "Char at index 2: " + char;
+    }
+
+    // function replaceText() {
+    //   const str = document.getElementById("stringInput").value;
+    //   const replaced = str.replace("a", "@");
+    //   document.getElementById("stringResult").innerText = "Replace: " + replaced;
+    // }
+
+    // function replaceAllText() {
+    //   const str = document.getElementById("stringInput").value;
+    //   const replaced = str.replaceAll("a", "@");
+    //   document.getElementById("stringResult").innerText = "Replace All: " + replaced;
+    // }
 
     // MATH FUNCTIONS
     function getPower() {
