@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript String and Math Functions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: red;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    input, button {
+      margin: 5px 0;
+      padding: 5px;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JAVASCRIPT STRING AND MATH FUNCTIONS</h1>
+
+  <!-- STRING FUNCTIONS SECTION -->
+  <section>
+    <h2>String Functions</h2>
+
+    <label>Enter a word:</label><br>
+    <input type="text" id="stringInput"><br>
+
+    <button onclick="getLength()">Get Length</button>
+    <button onclick="toUpperCase()">To Uppercase</button>
+    <button onclick="toLowerCase()">To Lowercase</button>
+
+    <div class="result" id="stringResult"></div>
+  </section>
+
+  <!-- MATH FUNCTIONS SECTION -->
+  <section>
+    <h2>Math Functions</h2>
+
+    <label>Enter a number:</label><br>
+    <input type="number" id="mathInput"><br>
+
+    <button onclick="getPower()">Power (x^2)</button>
+    <button onclick="getAbs()">Absolute</button>
+    <button onclick="getSqrt()">Square Root</button>
+    <button onclick="getRound()">Round</button>
+    <button onclick="getCeil()">Ceiling</button>
+    <button onclick="getFloor()">Floor</button>
+
+    <div class="result" id="mathResult"></div>
+  </section>
+
+  <script>
+    // STRING FUNCTIONS
+    function getLength() {
+      const str = document.getElementById("stringInput").value;
+      document.getElementById("stringResult").innerHTML = "Length: " + str.length;
+    }
+
+    function toUpperCase() {
+      const str = document.getElementById("stringInput").value;
+      document.getElementById("stringResult").innerText = "Uppercase: " + str.toUpperCase();
+    }
+
+    function toLowerCase() {
+      const str = document.getElementById("stringInput").value;
+      document.getElementById("stringResult").innerText = "Lowercase: " + str.toLowerCase();
+    }
+
+    // MATH FUNCTIONS
+    function getPower() {
+      const num = parseFloat(document.getElementById("mathInput").value);
+      document.getElementById("mathResult").innerText = "Power (x^2): " + Math.pow(num, 2);
+    }
+
+    function getAbs() {
+      const num = parseFloat(document.getElementById("mathInput").value);
+      document.getElementById("mathResult").innerText = "Absolute: " + Math.abs(num);
+    }
+
+    function getSqrt() {
+      const num = parseFloat(document.getElementById("mathInput").value);
+      document.getElementById("mathResult").innerText = "Square Root: " + Math.sqrt(num);
+    }
+
+    function getRound() {
+      const num = parseFloat(document.getElementById("mathInput").value);
+      document.getElementById("mathResult").innerText = "Rounded: " + Math.round(num);
+    }
+
+    function getCeil() {
+      const num = parseFloat(document.getElementById("mathInput").value);
+      document.getElementById("mathResult").innerText = "Ceiling: " + Math.ceil(num);
+    }
+
+    function getFloor() {
+      const num = parseFloat(document.getElementById("mathInput").value);
+      document.getElementById("mathResult").innerText = "Floor: " + Math.floor(num);
+    }
+  </script>
+
+</body>
+</html>
