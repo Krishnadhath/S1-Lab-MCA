@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Year Calendar</title>
+</head>
+<body>
+    <h2>Year Calendar</h2>
+    <input type="number" id="yearInput" placeholder="Enter Year" />
+    <button onclick="printCalendar()">Show Calendar</button>
+
+    <pre id="calendarOutput"></pre>
+
+    <script>
+        function printCalendar() {
+            const year = parseInt(document.getElementById("yearInput").value);
+            const output = document.getElementById("calendarOutput");
+
+            if (isNaN(year) || year < 1) {
+                output.textContent = "Please enter a valid year.";
+                return;
+            }
+
+            const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            let calendarText = `Calendar for ${year}\n\n`;
+
+            for (let month = 0; month < 12; month++) {
+                calendarText += `\n\n----- ${months[month]} -----\n`;
+                calendarText += days.join(" ") + "\n";
+
+                let firstDay = new Date(year, month, 1).getDay();
+                let lastDate = new Date(year, month + 1, 0).getDate();
+
+                let dayLine = "";
+                for (let i = 0; i < firstDay; i++) {
+                    dayLine += "    ";
+                }
+
+                for (let day = 1; day <= lastDate; day++) {
+                    dayLine += (day < 10 ? "  " + day : " " + day) + " ";
+                    firstDay++;
+                    if (firstDay % 7 === 0) {
+                        calendarText += dayLine + "\n";
+                        dayLine = "";
+                    }
+                }
+
+                if (dayLine !== "") {
+                    calendarText += dayLine + "\n";
+                }
+            }
+
+            output.textContent = calendarText;
+        }
+    </script>
+</body>
+</html>
