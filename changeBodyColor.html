@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Body Color</title>
+    <script>
+        function changeColor() {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="changeColor()">Hello World</button>
+</body>
+</html>
