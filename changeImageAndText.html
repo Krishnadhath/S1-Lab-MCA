@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Hover Change Example</title>
+  <style>
+    #image-container {
+      text-align: center;
+      margin-top: 150px;
+    }
+    img {
+      width: 400px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="image-container">
+    <img id="myImage" src="img1.jpg" alt="Original Image">
+    <p id="myText">original text.</p>
+  </div>
+
+  <script>
+    const img = document.getElementById("myImage");
+    const text = document.getElementById("myText");
+
+    img.addEventListener("mouseover", function() {
+      img.src = "img3.png";
+      text.textContent = "new text";
+    });
+
+    img.addEventListener("mouseout", function() {
+      img.src = "img6.png";
+      text.textContent = "original text.";
+    });
+  </script>
+
+</body>
+</html>
